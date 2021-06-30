@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Framework/Commands/Commands.h"
+#include "EditorStyleSet.h"
 #include "AssetPrefixAssignerStyle.h"
 
 class FAssetPrefixAssignerCommands : public TCommands<FAssetPrefixAssignerCommands>
@@ -11,7 +12,12 @@ class FAssetPrefixAssignerCommands : public TCommands<FAssetPrefixAssignerComman
 public:
 
 	FAssetPrefixAssignerCommands()
-		: TCommands<FAssetPrefixAssignerCommands>(TEXT("AssetPrefixAssigner"), NSLOCTEXT("Contexts", "AssetPrefixAssigner", "AssetPrefixAssigner Plugin"), NAME_None, FAssetPrefixAssignerStyle::GetStyleSetName())
+		: TCommands<FAssetPrefixAssignerCommands>(
+			TEXT("AssetPrefixAssigner")
+			, NSLOCTEXT("Contexts"
+				, "AssetPrefixAssigner"
+				, "AssetPrefixAssigner Plugin")
+			, NAME_None, FAssetPrefixAssignerStyle::GetStyleSetName())
 	{
 	}
 
@@ -19,7 +25,7 @@ public:
 	virtual void RegisterCommands() override;
 
 public:
-	TSharedPtr< FUICommandInfo > PluginButton;
+	//TSharedPtr< FUICommandInfo > PluginButton;
 
 	TSharedPtr< FUICommandInfo > AssetButton;
 };

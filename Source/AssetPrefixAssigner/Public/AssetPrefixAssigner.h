@@ -20,15 +20,15 @@ public:
 	TSharedPtr<const FExtensionBase> Extension;
 	
 	/** This function will be bound to Command. */
-	void PluginButtonClicked();
+	void AssetButtonClicked();
 
 	void AddToolBarExtension(FToolBarBuilder& Builder);
 
 private:
 
-	void RegisterMenus();
+	//void RegisterMenus();
 
 
 private:
-	TSharedPtr<class FUICommandList> PluginCommands;
+	//TSharedPtr<class FUICommandList> PluginCommands;
 };

@@ -5,10 +5,9 @@
 #include "AssetPrefixAssignerCommands.h"
 #include "Misc/MessageDialog.h"
 #include "ToolMenus.h"
-#include "Textures/SlateIcon.h"
-#include "SlateExtras.h"
-#include "SlateBasics.h"
+
 #include "LevelEditor.h"
+#include "SlateBasics.h"
 #include "Framework/MultiBox/MultiBoxExtender.h"
 #include "Engine/ObjectLibrary.h"
 
@@ -20,31 +19,35 @@ void FAssetPrefixAssignerModule::StartupModule()
 {
 	// This code will execute after your module is loaded into memory; the exact timing is specified in the .uplugin file per-module
 	
-	FAssetPrefixAssignerStyle::Initialize();
-	FAssetPrefixAssignerStyle::ReloadTextures();
+	//FAssetPrefixAssignerStyle::Initialize();
+	//FAssetPrefixAssignerStyle::ReloadTextures();
 
 	FAssetPrefixAssignerCommands::Register();
 	
-	PluginCommands = MakeShareable(new FUICommandList);
+	/*PluginCommands = MakeShareable(new FUICommandList);
 
 	PluginCommands->MapAction(
 		FAssetPrefixAssignerCommands::Get().PluginButton,
 		FExecuteAction::CreateRaw(this, &FAssetPrefixAssignerModule::PluginButtonClicked),
 		FCanExecuteAction());
 
-	UToolMenus::RegisterStartupCallback(FSimpleMulticastDelegate::FDelegate::CreateRaw(this, &FAssetPrefixAssignerModule::RegisterMenus));
+	UToolMenus::RegisterStartupCallback(FSimpleMulticastDelegate::FDelegate::CreateRaw(this, &FAssetPrefixAssignerModule::RegisterMenus));*/
 
 	TSharedPtr<FUICommandList> CommandList = MakeShareable(new FUICommandList());
 
 	CommandList->MapAction(
 		FAssetPrefixAssignerCommands::Get().AssetButton,
-		FExecuteAction::CreateRaw(this, &FAssetPrefixAssignerModule::PluginButtonClicked),
+		FExecuteAction::CreateRaw(this, &FAssetPrefixAssignerModule::AssetButtonClicked),
 		FCanExecuteAction());
 
 	ToolbarExtender = MakeShareable(new FExtender());
-	Extension = ToolbarExtender->AddToolBarExtension("EditorModes", EExtensionHook::After,
-		CommandList, FToolBarExtensionDelegate::CreateRaw(
-		this, &FAssetPrefixAssignerModule::AddToolBarExtension));
+	Extension = ToolbarExtender->AddToolBarExtension(
+		"Play" 
+		, EExtensionHook::After
+		, CommandList
+		, FToolBarExtensionDelegate::CreateRaw(
+			this, 
+			&FAssetPrefixAssignerModule::AddToolBarExtension));
 
 	FLevelEditorModule& LevelEditorModule = 
 		FModuleManager::LoadModuleChecked<FLevelEditorModule>("LevelEditor");
@@ -61,16 +64,16 @@ void FAssetPrefixAssignerModule::ShutdownModule()
 	Extension.Reset();
 	ToolbarExtender.Reset();
 
-	UToolMenus::UnRegisterStartupCallback(this);
+	/*UToolMenus::UnRegisterStartupCallback(this);
 
 	UToolMenus::UnregisterOwner(this);
 
 	FAssetPrefixAssignerStyle::Shutdown();
 
-	FAssetPrefixAssignerCommands::Unregister();
+	FAssetPrefixAssignerCommands::Unregister();*/
 }
 
-void FAssetPrefixAssignerModule::PluginButtonClicked()
+void FAssetPrefixAssignerModule::AssetButtonClicked()
 {
 	UObjectLibrary* AssetLibrary = UObjectLibrary::CreateLibrary(UObject::StaticClass(), true, true);
 	AssetLibrary->AddToRoot();
@@ -100,36 +103,36 @@ void FAssetPrefixAssignerModule::AddToolBarExtension(FToolBarBuilder& Builder)
 		, "LevelEditor.ViewOptions"
 		, "LevelEditor.ViewOptions.Small");*/
 
-	Builder.AddToolBarButton(FAssetPrefixAssignerCommands::Get().PluginButton
+	Builder.AddToolBarButton(FAssetPrefixAssignerCommands::Get().AssetButton
 		, NAME_None
-		, FText::FromString("Rename Assets")
+		, FText::FromString("Rename Assets Button")
 		, FText::FromString("Rename Assets"));
 }
 
-void FAssetPrefixAssignerModule::RegisterMenus()
-{
-	// Owner will be used for cleanup in call to UToolMenus::UnregisterOwner
-	FToolMenuOwnerScoped OwnerScoped(this);
-
-	{
-		UToolMenu* Menu = UToolMenus::Get()->ExtendMenu("LevelEditor.MainMenu.Window");
-		{
-			FToolMenuSection& Section = Menu->FindOrAddSection("WindowLayout");
-			Section.AddMenuEntryWithCommandList(FAssetPrefixAssignerCommands::Get().PluginButton, PluginCommands);
-		}
-	}
-
-	{
-		UToolMenu* ToolbarMenu = UToolMenus::Get()->ExtendMenu("LevelEditor.LevelEditorToolBar");
-		{
-			FToolMenuSection& Section = ToolbarMenu->FindOrAddSection("Settings");
-			{
-				FToolMenuEntry& Entry = Section.AddEntry(FToolMenuEntry::InitToolBarButton(FAssetPrefixAssignerCommands::Get().PluginButton));
-				Entry.SetCommandList(PluginCommands);
-			}
-		}
-	}
-}
+//void FAssetPrefixAssignerModule::RegisterMenus()
+//{
+//	// Owner will be used for cleanup in call to UToolMenus::UnregisterOwner
+//	FToolMenuOwnerScoped OwnerScoped(this);
+//
+//	{
+//		UToolMenu* Menu = UToolMenus::Get()->ExtendMenu("LevelEditor.MainMenu.Window");
+//		{
+//			FToolMenuSection& Section = Menu->FindOrAddSection("WindowLayout");
+//			Section.AddMenuEntryWithCommandList(FAssetPrefixAssignerCommands::Get().PluginButton, PluginCommands);
+//		}
+//	}
+//
+//	{
+//		UToolMenu* ToolbarMenu = UToolMenus::Get()->ExtendMenu("LevelEditor.LevelEditorToolBar");
+//		{
+//			FToolMenuSection& Section = ToolbarMenu->FindOrAddSection("Settings");
+//			{
+//				FToolMenuEntry& Entry = Section.AddEntry(FToolMenuEntry::InitToolBarButton(FAssetPrefixAssignerCommands::Get().PluginButton));
+//				Entry.SetCommandList(PluginCommands);
+//			}
+//		}
+//	}
+//}
 
 #undef LOCTEXT_NAMESPACE
 	
