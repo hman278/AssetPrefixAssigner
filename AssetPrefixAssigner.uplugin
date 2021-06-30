@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "AssetPrefixAssigner",
+	"Description": "Plugin for automatically giving your assets proper prefixes.",
+	"Category": "Other",
+	"CreatedBy": "hman278",
+	"CreatedByURL": "https://github.com/hman278",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "AssetPrefixAssigner",
+			"Type": "Editor",
+			"LoadingPhase": "Default"
+		}
+	]
+}
