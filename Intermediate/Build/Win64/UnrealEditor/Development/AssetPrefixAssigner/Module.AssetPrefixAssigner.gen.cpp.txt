@@ -1,7 +1,0 @@
-D:\JaydenWorkspace\SwimmingPoo\Plugins\AssetPrefixAssigner\Intermediate\Build\Win64\UnrealEditor\Development\AssetPrefixAssigner\Definitions.AssetPrefixAssigner.h
-D:/JaydenWorkspace/SwimmingPoo/Plugins/AssetPrefixAssigner/Intermediate/Build/Win64/UnrealEditor/Inc/AssetPrefixAssigner/AssetPrefixAssigner.init.gen.cpp
-D:\EpicGames\UE_5.0EA\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
-D:\EpicGames\UE_5.0EA\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
-D:/JaydenWorkspace/SwimmingPoo/Plugins/AssetPrefixAssigner/Intermediate/Build/Win64/UnrealEditor/Inc/AssetPrefixAssigner/AssetProperties.gen.cpp
-D:\JaydenWorkspace\SwimmingPoo\Plugins\AssetPrefixAssigner\Source\AssetPrefixAssigner/Public/AssetProperties.h
-D:\JaydenWorkspace\SwimmingPoo\Plugins\AssetPrefixAssigner\Intermediate\Build\Win64\UnrealEditor\Inc\AssetPrefixAssigner\AssetProperties.generated.h
