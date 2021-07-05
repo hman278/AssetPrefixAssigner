@@ -7,13 +7,7 @@
 
 void FAssetPrefixAssignerCommands::RegisterCommands()
 {
-	//UI_COMMAND(PluginButton
-	//	, "AssetPrefixAssigner"
-	//	, "Execute AssetPrefixAssigner action"
-	//	, EUserInterfaceActionType::Button
-	//	, FInputGesture());
-
-	UI_COMMAND(AssetButton
+	UI_COMMAND(PluginButton
 		, "AssetPrefixAssigner"
 		, "Execute AssetPrefixAssigner action"
 		, EUserInterfaceActionType::Button

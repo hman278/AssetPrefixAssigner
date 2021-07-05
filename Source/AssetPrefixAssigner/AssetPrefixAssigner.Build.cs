@@ -11,6 +11,7 @@ public class AssetPrefixAssigner : ModuleRules
 		PublicIncludePaths.AddRange(
 			new string[] {
 				// ... add public include paths required here ...
+				"AssetPrefixAssigner/Public"
 			}
 			);
 				
@@ -30,7 +31,9 @@ public class AssetPrefixAssigner : ModuleRules
 				"CoreUObject",
 				"Engine",
 				"UnrealEd",
-
+				"JsonUtilities",
+				"Json",
+				"AssetTools",
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);
@@ -41,7 +44,6 @@ public class AssetPrefixAssigner : ModuleRules
 			{
 				"Projects",
 				"InputCore",
-				"EditorFramework",
 				"UnrealEd",
 				"ToolMenus",
 				"CoreUObject",
@@ -49,6 +51,9 @@ public class AssetPrefixAssigner : ModuleRules
 				"Slate",
 				"SlateCore",
 				"LevelEditor",
+				"JsonUtilities",
+				"Json",
+				"AssetTools",
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);

@@ -1,0 +1,162 @@
+[
+	{
+		"Class": "UserDefinedEnum",
+		"Prefix": "E"
+	},
+	{
+		"Class": "UserDefinedStruct",
+		"Prefix": "S"
+	},
+	{
+		"Class": "Material",
+		"Prefix": "M_"
+	},
+	{
+		"Class": "MaterialFunction",
+		"Prefix": "MF_"
+	},
+	{
+		"Class": "MaterialInstanceConstant",
+		"Prefix": "MI_"
+	},
+	{
+		"Class": "MaterialParameterCollection",
+		"Prefix": "MPC_"
+	},
+	{
+		"Class": "SubsurfaceProfile",
+		"Prefix": "P_"
+	},
+	{
+		"Class": "Texture",
+		"Prefix": "T_"
+	},
+	{
+		"Class": "TextureCube",
+		"Prefix": "TB_"
+	},
+	{
+		"Class": "MediaTexture",
+		"Prefix": "MT_"
+	},
+	{
+		"Class": "TextureLightProfile",
+		"Prefix": "TLP"
+	},
+	{
+		"Class": "CurveFloat",
+		"Prefix": "Curve_"
+	},
+	{
+		"Class": "DataTable",
+		"Prefix": "DT_"
+	},
+	{
+		"Class": "FoliageType",
+		"Prefix": "FT_"
+	},
+	{
+		"Class": "ForceFeedbackEffect",
+		"Prefix": "FFE"
+	},
+	{
+		"Class": "LandscapeGrassType",
+		"Prefix": "LG_"
+	},
+	{
+		"Class": "MediaPlayer",
+		"Prefix": "MP_"
+	},
+	{
+		"Class": "StaticMesh",
+		"Prefix": "SM_"
+	},
+	{
+		"Class": "Blueprint",
+		"Prefix": "BP_"
+	},
+	{
+		"Class": "ParticleSystem",
+		"Prefix": "PS_"
+	},
+	{
+		"Class": "WidgetBlueprint",
+		"Prefix": "WB_"
+	},
+	{
+		"Class": "AnimBlueprint",
+		"Prefix": "ABP_"
+	},
+	{
+		"Class": "BlendSpace",
+		"Prefix": "BS_"
+	},
+	{
+		"Class": "LevelSequence",
+		"Prefix": "LS_"
+	},
+	{
+		"Class": "MorphTarget",
+		"Prefix": "MT_"
+	},
+	{
+		"Class": "SkeletalMesh",
+		"Prefix": "SK_"
+	},
+	{
+		"Class": "Skeleton",
+		"Prefix": "SKEL_"
+	},
+	{
+		"Class": "BehaviorTree",
+		"Prefix": "BT_"
+	},
+	{
+		"Class": "Blackboard",
+		"Prefix": "BB_"
+	},
+	{
+		"Class": "BTDecorator",
+		"Prefix": "BTDecorator_"
+	},
+	{
+		"Class": "BTService",
+		"Prefix": "BTService_"
+	},
+	{
+		"Class": "BTTask_BlueprintBase",
+		"Prefix": "BTTask_"
+	},
+	{
+		"Class": "PhysicalAnimation",
+		"Prefix": "PM_"
+	},
+	{
+		"Class": "SoundAttenuation",
+		"Prefix": "ATTA_"
+	},
+	{
+		"Class": "ReverbEffect",
+		"Prefix": "Reverb_"
+	},
+	{
+		"Class": "SoundCue",
+		"Prefix": "A_"
+	},
+	{
+		"Class": "SoundWave",
+		"Prefix": "A_"
+	},
+	{
+		"Class": "Font",
+		"Prefix": "Font_"
+	},
+	{
+		"Class": "SlateBrush",
+		"Prefix": "Brush_"
+	},
+	{
+		"Class": "SlateWidgetStyle",
+		"Prefix": "Style_"
+	}
+]

@@ -25,7 +25,5 @@ public:
 	virtual void RegisterCommands() override;
 
 public:
-	//TSharedPtr< FUICommandInfo > PluginButton;
-
-	TSharedPtr< FUICommandInfo > AssetButton;
+	TSharedPtr< FUICommandInfo > PluginButton;
 };

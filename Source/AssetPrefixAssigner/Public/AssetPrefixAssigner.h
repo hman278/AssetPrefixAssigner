@@ -16,19 +16,13 @@ public:
 	virtual void StartupModule() override;
 	virtual void ShutdownModule() override;
 
-	TSharedPtr<FExtender> ToolbarExtender;
-	TSharedPtr<const FExtensionBase> Extension;
-	
-	/** This function will be bound to Command. */
-	void AssetButtonClicked();
-
-	void AddToolBarExtension(FToolBarBuilder& Builder);
+	void PluginButtonClicked();
 
 private:
 
-	//void RegisterMenus();
+	void RegisterMenus();
 
 
 private:
-	//TSharedPtr<class FUICommandList> PluginCommands;
+	TSharedPtr<class FUICommandList> PluginCommands;
 };
