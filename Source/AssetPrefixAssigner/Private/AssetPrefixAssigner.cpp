@@ -90,14 +90,14 @@ void FAssetPrefixAssignerModule::PluginButtonClicked()
 	TArray<FAssetProperties> Properties;
 	TArray<FAssetProperties> PropertiesBp;
 
-	if (!FJsonObjectConverter::JsonArrayStringToUStruct(JsonContent, &Properties))
+	if (!FJsonObjectConverter::JsonArrayStringToUStruct(JsonContent, &Properties, 0, 0))
 	{
 		FText DialogText = FText::Format(
 			LOCTEXT("PluginButtonDialogText", "Couldn't deserialize json string into the Properties array, {0}"), FText::FromString(""));
 		FMessageDialog::Open(EAppMsgType::Ok, DialogText);
 		return;
 	}
-	else if (!FJsonObjectConverter::JsonArrayStringToUStruct(JsonContentBp, &PropertiesBp))
+	else if (!FJsonObjectConverter::JsonArrayStringToUStruct(JsonContentBp, &PropertiesBp, 0, 0))
 	{
 		FText DialogText = FText::Format(
 			LOCTEXT("PluginButtonDialogText", "Couldn't deserialize json string into the PropertiesBp array, {0}"), FText::FromString(""));

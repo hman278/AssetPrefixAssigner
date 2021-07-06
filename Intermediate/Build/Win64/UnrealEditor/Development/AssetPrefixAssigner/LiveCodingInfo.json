@@ -1,0 +1,15 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.AssetPrefixAssigner.cpp.obj": [
+			"AssetPrefixAssigner.cpp.obj",
+			"AssetPrefixAssignerCommands.cpp.obj",
+			"AssetPrefixAssignerStyle.cpp.obj",
+			"AssetProperties.cpp.obj"
+		],
+		"Module.AssetPrefixAssigner.gen.cpp.obj": [
+			"AssetPrefixAssigner.init.gen.cpp.obj",
+			"AssetProperties.gen.cpp.obj"
+		]
+	}
+}
