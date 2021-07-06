@@ -15,4 +15,6 @@ defined in BlueprintAssetProperties.json file (i.e. AIController), the rest shou
 You must ensure that your Content folders contents are all NOT read only, otherwise the plugin will not function properly.
 If you use version control software like Perforce, make sure that all the assets that you want renamed are checked out, otherwise the plugin may not work.
 
+The plugin was tested on 4.26 and 5.0.
+
 That's it, have fun:)
