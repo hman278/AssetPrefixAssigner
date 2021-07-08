@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+//  © 2021 hman278
 
 #include "AssetPrefixAssignerStyle.h"
 #include "AssetPrefixAssigner.h"

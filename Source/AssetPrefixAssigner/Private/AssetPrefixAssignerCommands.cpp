@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+//  © 2021 hman278
 
 #include "AssetPrefixAssignerCommands.h"
 #include "Framework/Commands/Commands.h" // this may need to be deleted

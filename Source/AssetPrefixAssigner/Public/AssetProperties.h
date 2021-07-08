@@ -1,3 +1,5 @@
+//  © 2021 hman278
+
 #pragma once
 
 #include "AssetProperties.generated.h"
