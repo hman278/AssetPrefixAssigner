@@ -22,7 +22,7 @@
 			"LoadingPhase": "Default"
 		}
 	],
-	"WhitelistPlatforms": [ "Win64", "Win32", "Mac" ],
-	"BlacklistPlatforms": [],
+	"WhitelistPlatforms": [ "Win64", "Win32", "Linux" ],
+	"BlacklistPlatforms": [ "Mac" ],
 	"MarketplaceURL" : "com.epicgames.launcher://ue/marketplace/product/f30d661c4c1841b98544e88815af663e"
 }
