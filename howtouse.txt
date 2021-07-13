@@ -1,4 +1,4 @@
-Close the editor
+First close the editor
 Clone the repository to your project's plugin folder ( in some cases you may need to regenerate your vs project)
 Open the editor, go to Editor->Plugins, find the plugin, enable it
 If you are using Unreal 5, you will see a new button appear under Window named "AssetPrefixAssigner", click that for the plugin to start doing its work
@@ -10,3 +10,7 @@ there are two fields, class and prefix. Depending on your teams naming conventio
 the prefix fields to your preferred prefixes for any class you'd like, or add new fields.
 
 Any asset that is derived from UBlueprint should be defined in BlueprintAssetProperties.json, for any other type it should be AssetProperties.json
+
+IMPORTANT!!!!!!!!!!!!!!!
+You must ensure that your Content folder's contents are all NOT read-only, otherwise, the plugin will not function properly.
+If you use version control software like Perforce, make sure that all the assets that you want to be renamed are checked out, otherwise, the plugin may not work.
