@@ -62,7 +62,7 @@ void FAssetPrefixAssignerModule::PluginButtonClicked()
 		TEXT("Plugins/AssetPrefixAssigner/Resources/BlueprintAssetProperties.json"));
 
 	/* Make sure the json files are valid
-	, otherwise present a dialog box with an error message */
+	otherwise present a dialog box with an error message */
 	if (!FPlatformFileManager::Get().GetPlatformFile().FileExists(*Path))
 	{
 		FText DialogText = FText::Format(
@@ -90,6 +90,7 @@ void FAssetPrefixAssignerModule::PluginButtonClicked()
 	TArray<FAssetProperties> Properties;
 	TArray<FAssetProperties> PropertiesBp;
 
+	/* Initialize json file contents into TArray-s of FAssetProperties */
 	if (!FJsonObjectConverter::JsonArrayStringToUStruct(JsonContent, &Properties, 0, 0))
 	{
 		FText DialogText = FText::Format(
@@ -105,6 +106,7 @@ void FAssetPrefixAssignerModule::PluginButtonClicked()
 		return;
 	}
 
+	/* Load game assets */
 	UObjectLibrary* AssetLibrary = UObjectLibrary::CreateLibrary(UObject::StaticClass(), true, true);
 	AssetLibrary->AddToRoot();
 
