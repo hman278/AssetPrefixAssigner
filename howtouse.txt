@@ -1,5 +1,5 @@
 First close the editor
-Clone the repository to your project's plugin folder ( in some cases you may need to regenerate your vs project)
+Clone the repository to your project's plugin folder or download it from the marketplace ( in some cases you may need to regenerate your vs project )
 Open the editor, go to Editor->Plugins, find the plugin, enable it
 If you are using Unreal 5, you will see a new button appear under Window named "AssetPrefixAssigner", click that for the plugin to start doing its work
 On Unreal 4 there will be a new button added in the toolbar, simply click it and the plugin will start doing its work
