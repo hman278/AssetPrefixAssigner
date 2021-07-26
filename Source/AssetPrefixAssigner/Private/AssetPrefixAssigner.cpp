@@ -56,15 +56,28 @@ void FAssetPrefixAssignerModule::ShutdownModule()
 
 void FAssetPrefixAssignerModule::PluginButtonClicked()
 {           
-	const FString Path = FPaths::ProjectUserDir().Append(
+	FString Path = FPaths::ProjectUserDir().Append(
 		TEXT("Plugins/AssetPrefixAssigner/Resources/AssetProperties.json"));
-	const FString PathBp = FPaths::ProjectUserDir().Append(
+	FString PathBp = FPaths::ProjectUserDir().Append(
 		TEXT("Plugins/AssetPrefixAssigner/Resources/BlueprintAssetProperties.json"));
 
 	/* Make sure the json files are valid
 	otherwise present a dialog box with an error message */
 	if (!FPlatformFileManager::Get().GetPlatformFile().FileExists(*Path))
 	{
+		// check for the plugin files in the engine directory
+		Path = FPaths::EngineDir().Append(
+			TEXT("Plugins/AssetPrefixAssigner/Resources/AssetProperties.json"));
+
+		if (!FPlatformFileManager::Get().GetPlatformFile().FileExists(*Path))
+		{
+			FText DialogText = FText::Format(
+				LOCTEXT("PluginButtonDialogText", "File doesn't exist, {0}")
+				, FText::FromString(*Path));
+			FMessageDialog::Open(EAppMsgType::Ok, DialogText);
+			return;
+		}
+
 		FText DialogText = FText::Format(
 			LOCTEXT("PluginButtonDialogText", "File doesn't exist, {0}")
 			, FText::FromString(*Path));
@@ -73,6 +86,18 @@ void FAssetPrefixAssignerModule::PluginButtonClicked()
 	}
 	else if (!FPlatformFileManager::Get().GetPlatformFile().FileExists(*PathBp))
 	{
+		PathBp = FPaths::EngineDir().Append(
+			TEXT("Plugins/AssetPrefixAssigner/Resources/BlueprintAssetProperties.json"));
+
+		if (!FPlatformFileManager::Get().GetPlatformFile().FileExists(*PathBp))
+		{
+			FText DialogText = FText::Format(
+				LOCTEXT("PluginButtonDialogText", "File doesn't exist, {0}")
+				, FText::FromString(*PathBp));
+			FMessageDialog::Open(EAppMsgType::Ok, DialogText);
+			return;
+		}
+
 		FText DialogText = FText::Format(
 			LOCTEXT("PluginButtonDialogText", "File doesn't exist, {0}")
 			, FText::FromString(*PathBp));
